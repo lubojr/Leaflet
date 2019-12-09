@@ -1,5 +1,5 @@
 /* @preserve
- * Leaflet 1.5.1, a JS library for interactive maps. http://leafletjs.com
+ * Leaflet 1.5.1+update-styling-options.2e3e0ff, a JS library for interactive maps. http://leafletjs.com
  * (c) 2010-2018 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
@@ -9,7 +9,7 @@
 	(factory((global.L = {})));
 }(this, (function (exports) { 'use strict';
 
-var version = "1.5.1";
+var version = "1.5.1+update-styling-options.2e3e0ffb";
 
 /*
  * @namespace Util
@@ -12827,6 +12827,12 @@ var SVG = Renderer.extend({
 			path.setAttribute('fill-rule', options.fillRule || 'evenodd');
 		} else {
 			path.setAttribute('fill', 'none');
+		}
+
+		if (options.visibility) {
+			path.setAttribute('visibility', options.visibility );
+		} else {
+			path.setAttribute('visibility', 'visible' );
 		}
 	},
 
