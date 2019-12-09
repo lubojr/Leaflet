@@ -173,6 +173,12 @@ export var SVG = Renderer.extend({
 		} else {
 			path.setAttribute('fill', 'none');
 		}
+
+		if (options.visibility) {
+			path.setAttribute('visibility', options.visibility );
+		} else {
+			path.setAttribute('visibility', 'visible' );
+		}
 	},
 
 	_updatePoly: function (layer, closed) {
